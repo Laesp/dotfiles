@@ -1,0 +1,144 @@
+#  ___  ________     
+# |\  \|\_____  \    
+# \ \  \|____|\ /_   
+#  \ \  \    \|\  \  
+#   \ \  \  __\_\  \ 
+#    \ \__\|\_______\
+#     \|__|\|_______|
+
+# wm
+
+set $mod Mod4
+floating_modifier $mod
+font pango: cherry 8
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+set $ws99:3 "Focus"
+
+# binds
+
+# focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# splits
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+# layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# exit
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'exit' -b 'yes' 'i3-msg exit'"
+# other
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+bindsym $mod+Shift+q kill
+bindsym $mod+Return exec xterm
+bindsym $mod+Shift+Return exec bash ~/draw_term
+bindsym Print exec scrot -q 100
+bindsym $mod+d exec dmenu_run -l 8 -fn cherry -nb black -sb gray -sf black
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+
+# goto
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+10 workspace $ws10
+
+# move to
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+
+
+# colors
+
+# active
+set $activeBorder     "#cfc9cf"
+set $active           "#887888"
+set $activeText       "#0a090a"
+
+# inactive
+set $inactiveBorder   "#9f939f"
+set $inactive         "#594f59"
+set $inactiveText     "#282428"
+
+# class           border            background   text            indicator   child_border
+client.focused    $activeBorder     $active      $activeText     $active     $active
+client.unfocused  $inactiveBorder   $inactive    $inactiveText   $inactive   $inactive
+
+
+# misc
+
+exec xrdb .Xresources
+exec wal -R
+exec_always feh --bg-fill ~/wall.png
+new_window pixel 4
+
+exec_always mpd
+exec compton -c -r 0 -p
+
+
+bar {
+        status_command py3status -c ~/.i3status.conf
+ 	separator_symbol " | "
+
+	colors {
+	separator #444444
+	background #222222
+	statusline #B1B1B1
+	focused_workspace #222222 #FDD451 #000000
+	active_workspace #222222 #333333 #888888
+	inactive_workspace #222222 #333333 #f1f1f1
+	urgent_workspace #eb709b #eb709b #ffffff
+   }
+ 	}
+# gaps
+
+
+gaps inner 25
+gaps outer 35 
+
+# no gaps when only one window is open
+# smart_gaps on
+# gap controls
+bindsym $mod+minus        gaps inner all minus 5
+bindsym $mod+plus         gaps inner all plus  5
+bindsym $mod+Shift+minus  gaps outer all minus 5
+bindsym $mod+Shift+plus   gaps outer all plus  5
+
+
+
+# quiet mode
+bindsym $mod+o exec ~/.i3/i3wm-focus
