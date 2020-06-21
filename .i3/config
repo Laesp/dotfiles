@@ -41,23 +41,16 @@ bindsym $mod+Shift+Right move right
 # splits
 bindsym $mod+h split h
 bindsym $mod+v split v
-
-# layout
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# exit
 # other
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
-bindsym $mod+a focus parent
 bindsym $mod+Shift+q kill
 bindsym $mod+Return exec xterm -tn xterm-256color
-bindsym $mod+Shift+Return exec bash ~/draw_term
-bindsym Print exec scrot -q 100
+bindsym Print exec scrot --select
 bindsym $mod+d exec dmenu_run -l 8 -fn cherry -nb black -sb gray -sf black
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c reload ; exec xterm -hold -e sh ~/programming/bashscripts/cpdotfiles.sh
 bindsym $mod+Shift+r restart
 
 
@@ -79,7 +72,13 @@ bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
-#bindsym $mod+space
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+#bindsym mod+space -- Remember to add floating side window
 
 # colors
 
@@ -114,7 +113,7 @@ bar {
 
 	colors {
 	separator #444444
-	background # move container to c
+	background #222222
 	statusline #B1B1B1
 	focused_workspace #222222 #FDD451 #000000
 	active_workspace #222222 #333333 #888888

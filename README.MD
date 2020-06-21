@@ -4,4 +4,4 @@
 ## TODO 
 - Clean up bashrc
 - Add comments to dotfiles
-- Add my commit file sh script
+- Make dotfiles more portable
