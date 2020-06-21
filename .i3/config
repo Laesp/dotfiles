@@ -23,6 +23,7 @@ set $ws9 "9"
 set $ws10 "10"
 set $ws99:3 "Focus"
 
+
 # binds
 
 # focus
@@ -47,14 +48,12 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # exit
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'exit' -b 'yes' 'i3-msg exit'"
 # other
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 bindsym $mod+Shift+q kill
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec xterm -tn xterm-256color
 bindsym $mod+Shift+Return exec bash ~/draw_term
 bindsym Print exec scrot -q 100
 bindsym $mod+d exec dmenu_run -l 8 -fn cherry -nb black -sb gray -sf black
@@ -72,7 +71,7 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
-bindsym $mod+10 workspace $ws10
+bindsym $mod+0 workspace $ws10
 
 # move to
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -80,7 +79,7 @@ bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
-
+#bindsym $mod+space
 
 # colors
 
@@ -106,7 +105,6 @@ exec wal -R
 exec_always feh --bg-fill ~/wall.png
 new_window pixel 4
 
-exec_always mpd
 exec compton -c -r 0 -p
 
 
@@ -116,7 +114,7 @@ bar {
 
 	colors {
 	separator #444444
-	background #222222
+	background # move container to c
 	statusline #B1B1B1
 	focused_workspace #222222 #FDD451 #000000
 	active_workspace #222222 #333333 #888888
