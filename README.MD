@@ -1,7 +1,7 @@
-# Laesp's orange i3 and i3bar dotfiles
+# Laesp's Orange Dotfiles for i3
 ![Screenshot](screenshot.png)
 ## TODO 
 - Clean up bashrc
 - Add comments to dotfiles
 - Make dotfiles more portable
-- Add kakrc
+- Make kakrc more portable

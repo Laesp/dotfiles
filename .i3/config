@@ -80,7 +80,7 @@ bindsym $mod+Shift+c reload ; exec xterm -hold -e sh $cpdotfilespath
 bindsym $mod+Shift+r restart
 bindsym $mod+o exec ~/.i3/i3wm-focus
 bindsym $mod+w exec $browser
-bindysm $mod+Shift+d $music
+bindsym $mod+Shift+d $music
 
 #
 ## Gaps Control
