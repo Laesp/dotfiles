@@ -5,3 +5,4 @@
 - Clean up bashrc
 - Add comments to dotfiles
 - Make dotfiles more portable
+- Add kakrc
