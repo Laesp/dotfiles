@@ -2,7 +2,9 @@ cpFunc () {
 	cp -i -r -v ~/.i3/ ~/github/dotfiles/
 	cp -i -r -v ~/.i3status.conf ~/github/dotfiles/
 	cp -i -r -v ~/.bashrc ~/github/dotfiles
-	cp -i -r -v ~/programming/bashscripts/cpdotfiles.sh ~/github/dotfiles;} # Recursion lol
+	cp -i -r -v ~/programming/bashscripts/cpdotfiles.sh ~/github/dotfiles
+	cp -i -r -v ~/.Xresources ~/github/dotfiles/
+	} # Recursion lol
 
 
 

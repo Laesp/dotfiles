@@ -1,16 +1,21 @@
-#  ___  ________     
-# |\  \|\_____  \    
-# \ \  \|____|\ /_   
-#  \ \  \    \|\  \  
-#   \ \  \  __\_\  \ 
-#    \ \__\|\_______\
-#     \|__|\|_______|
+# Laesp's i3 config
 
-# wm
+## Change these variables as you wish, pay careful attention to the $cpdotfilespath variable #
+# Wallpaper path is changed from the $wall variable
+#
 
 set $mod Mod4
 floating_modifier $mod
+set $browser firefox
+set $music deadbeef
+set $cpdotfilespath ~/programming/bashscripts/cpdotfiles.sh
+set $wall ~/wall.png
+
 font pango: cherry 8
+##
+
+## Workspace boilerplate ##
+#
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -22,39 +27,6 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 set $ws99:3 "Focus"
-
-
-# binds
-
-# focus
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# splits
-bindsym $mod+h split h
-bindsym $mod+v split v
-bindsym $mod+e layout toggle split
-
-# other
-bindsym $mod+f fullscreen toggle
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+Shift+q kill
-bindsym $mod+Return exec xterm -tn xterm-256color
-bindsym Print exec scrot --select
-bindsym $mod+d exec dmenu_run -l 8 -fn cherry -nb black -sb gray -sf black
-bindsym $mod+Shift+c reload ; exec xterm -hold -e sh ~/programming/bashscripts/cpdotfiles.sh
-bindsym $mod+Shift+r restart
-
-
-# goto
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -65,8 +37,6 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
-
-# move to
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -77,36 +47,68 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+###
 
-#bindsym mod+space -- Remember to add floating side window
+##### Bindings #####
+#
+# # Windows
+# 
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+e layout toggle split
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+q kill
 
-# colors
+#
+## Programs
+# Note: For the mod+Shift+c bind, point to wherever you clone the cpdotfiles.sh file
+#
 
-# active
+bindsym $mod+Return exec xterm -tn xterm-256color
+bindsym Print exec scrot --select
+bindsym $mod+d exec dmenu_run -l 8 -fn cherry -nb black -sb gray -sf black
+bindsym $mod+Shift+c reload ; exec xterm -hold -e sh $cpdotfilespath
+bindsym $mod+Shift+r restart
+bindsym $mod+o exec ~/.i3/i3wm-focus
+bindsym $mod+w exec $browser
+bindysm $mod+Shift+d $music
+
+#
+## Gaps Control
+#
+bindsym $mod+minus        gaps inner all minus 5
+bindsym $mod+plus         gaps inner all plus  5
+bindsym $mod+Shift+minus  gaps outer all minus 5
+bindsym $mod+Shift+plus   gaps outer all plus  5
+######
+
+
+##### Customization
+#
+## Borders
+#
+#
 set $activeBorder     "#cfc9cf"
 set $active           "#887888"
 set $activeText       "#0a090a"
-
-# inactive
 set $inactiveBorder   "#9f939f"
 set $inactive         "#594f59"
 set $inactiveText     "#282428"
-
 # class           border            background   text            indicator   child_border
 client.focused    $activeBorder     $active      $activeText     $active     $active
 client.unfocused  $inactiveBorder   $inactive    $inactiveText   $inactive   $inactive
-
-
-# misc
-
-exec xrdb .Xresources
-exec wal -R
-exec_always feh --bg-fill ~/wall.png
-new_window pixel 4
-
-exec compton -c -r 0 -p
-
-
+#
+## i3bar
+# 
 bar {
         status_command py3status -c ~/.i3status.conf
  	separator_symbol " | "
@@ -121,21 +123,17 @@ bar {
 	urgent_workspace #eb709b #eb709b #ffffff
    }
  	}
-# gaps
 
 
+
+## ## Execute at startup
+#
+#
+exec xrdb .Xresources
+exec wal -R
+exec_always feh --bg-fill $wall
+new_window pixel 4
+exec compton -c -r 0 -p
 gaps inner 25
-gaps outer 35 
+gaps outer 35
 
-# no gaps when only one window is open
-# smart_gaps on
-# gap controls
-bindsym $mod+minus        gaps inner all minus 5
-bindsym $mod+plus         gaps inner all plus  5
-bindsym $mod+Shift+minus  gaps outer all minus 5
-bindsym $mod+Shift+plus   gaps outer all plus  5
-
-
-
-# quiet mode
-bindsym $mod+o exec ~/.i3/i3wm-focus
