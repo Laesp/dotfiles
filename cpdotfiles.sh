@@ -1,12 +1,15 @@
+dotfilesPath=~/github/dotfiles
+
+
 cpFunc () {
-	cp -i -r -v ~/.i3/ ~/github/dotfiles/
-	cp -i -r -v ~/.i3status.conf ~/github/dotfiles/
-	cp -i -r -v ~/.bashrc ~/github/dotfiles
-	cp -i -r -v ~/programming/bashscripts/cpdotfiles.sh ~/github/dotfiles
-	cp -i -r -v ~/.Xresources ~/github/dotfiles/
-	cp -i -r -v ~/.config/kak/kakrc ~/github/dotfiles
-	cp -i -r -v ~/.config/deadbeef/config ~/github/dotfiles
-	cp -i -r -v ~/.xinitrc ~/github/dotfiles
+	cp -r -v ~/.i3/ $dotfilesPath
+	cp -r -v ~/.i3status.conf $dotfilesPath
+	cp -r -v ~/.bashrc $dotfilesPath
+	cp -r -v ~/programming/bashscripts/cpdotfiles.sh $dotfilesPath
+	cp -r -v ~/.Xresources $dotfilesPath
+	cp -r -v ~/.config/kak/kakrc $dotfilesPath
+	cp -r -v ~/.config/deadbeef/config $dotfilesPath
+	cp -r -v ~/.xinitrc $dotfilesPath
 }
 # Recursion lol
 
@@ -27,10 +30,10 @@ commitFuncCommand () {
 	cd ~/github/dotfiles
 	git add .
    	read -p "Please enter your commit message: " commitMessage
-   	echo Is $commitMessage your commit message?
-	git commit -m "$commitMessage" ~/github/dotfiles &&
+	git commit -m "$commitMessage" $dotfilesPath &&
 	sleep 2
-	git push origin master;
+	git push origin master
+	exit;
 }
 
 
