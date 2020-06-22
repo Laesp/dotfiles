@@ -45,7 +45,7 @@ gtkui.font.listview_group_text Tamzen Medium 10
 gtkui.font.listview_text Tamzen Medium 10
 gtkui.font.tabstrip_text Tamzen Medium 10
 gtkui.italic_current_track 0
-gtkui.layout.0.6.2 vbox expand="0 1" fill="1 1" homogeneous=0 {hbox expand="0 1 0" fill="1 1 1" homogeneous=0 {playtb {} seekbar {} volumebar {} } hsplitter locked=0 ratio=0.500000 pos=0 size2=0 {playlist hideheaders=0 width=659 {} vsplitter locked=0 ratio=0.471774 pos=0 size2=0 {musical_spectrum {} hsplitter locked=0 ratio=0.500000 pos=0 size2=0 {selproperties {} coverart {} } } } } 
+gtkui.layout.0.6.2 vbox expand="0 1" fill="1 1" homogeneous=0 {hbox expand="0 1 0" fill="1 1 1" homogeneous=0 {playtb {} seekbar {} volumebar {} } hsplitter locked=0 ratio=0.500000 pos=0 size2=0 {playlist hideheaders=0 width=338 {} vsplitter locked=0 ratio=0.471774 pos=0 size2=0 {musical_spectrum {} hsplitter locked=0 ratio=0.500000 pos=0 size2=0 {selproperties {} coverart {} } } } } 
 gtkui.override_bar_colors 1
 gtkui.override_listview_colors 1
 gtkui.override_tabstrip_colors 1
@@ -99,10 +99,10 @@ logwindow.geometry.h 200
 logwindow.geometry.w 400
 logwindow.geometry.x -44
 logwindow.geometry.y 34
-mainwin.geometry.h 623
-mainwin.geometry.w 1240
-mainwin.geometry.x 59
-mainwin.geometry.y 59
+mainwin.geometry.h 568
+mainwin.geometry.w 675
+mainwin.geometry.x 342
+mainwin.geometry.y 86
 network.proxy.port 8080
 notify.albumart 1
 notify.albumart_size 64
@@ -114,9 +114,9 @@ playback.loop 1
 playback.volume -3.357195
 playlist.current 1
 playlist.cursor.0 -1
-playlist.cursor.1 28
+playlist.cursor.1 26
 playlist.scroll.0 0
-playlist.scroll.1 284
+playlist.scroll.1 -26
 playlist.scroll.cursorfollowplayback 1
 playlist.tab.00000 mus
 playlist.tab.00001 mus
@@ -128,8 +128,8 @@ replaygain.preamp_with_rg 0.0000000
 replaygain.processing_flags 0
 resume.paused 1
 resume.playlist 1
-resume.position 123.58440
-resume.track 30
+resume.position 293.58334
+resume.track 26
 searchwin.geometry.h 150
 searchwin.geometry.w 450
 searchwin.geometry.x 456

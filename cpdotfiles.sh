@@ -6,7 +6,9 @@ cpFunc () {
 	cp -i -r -v ~/.Xresources ~/github/dotfiles/
 	cp -i -r -v ~/.config/kak/kakrc ~/github/dotfiles
 	cp -i -r -v ~/.config/deadbeef/config ~/github/dotfiles
-} # Recursion lol
+	cp -i -r -v ~/.xinitrc ~/github/dotfiles
+}
+# Recursion lol
 
 
 

@@ -65,9 +65,16 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen toggle
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+Shift+q kill
+bindsym $mod+s floating toggle
 
+# Scratchpad 
+bindsym $mod+space scratchpad show; mode "Scratchpad"
+bindsym $mod+Shift+space move container to scratchpad
+mode "Scratchpad" {
+    bindsym $mod+Shift+space floating toggle; mode "default"
+    bindsym $mod+space scratchpad show; mode "default"
+}
+bindsym $mod+Shift+q kill
 #
 ## Programs
 # Note: For the mod+Shift+c bind, point to wherever you clone the cpdotfiles.sh file
@@ -120,7 +127,7 @@ bar {
 	focused_workspace #222222 #FDD451 #000000
 	active_workspace #222222 #333333 #888888
 	inactive_workspace #222222 #333333 #f1f1f1
-	urgent_workspace #eb709b #eb709b #ffffff
+	urgent_workspace #222222 #FDD451 #000000
    }
  	}
 
