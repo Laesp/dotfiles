@@ -12,6 +12,7 @@ cpFunc () {
 	cp -r -v ~/.xinitrc $dotfilesPath
 	cp -r -v ~/wall.png $dotfilesPath
 	cp -r -v /etc/profile $dotfilesPath
+	cp -r -v /etc/environment $dotfilesPath
 }
 # Recursion lol
 
