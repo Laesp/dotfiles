@@ -129,11 +129,8 @@ bar {
 ## ## Execute at startup
 #
 #
-exec xrdb .Xresources
-exec wal -R
 exec_always feh --bg-fill $wall
 new_window pixel 4
-exec compton -c -r 0 -p
 gaps inner 25
 gaps outer 35
 
