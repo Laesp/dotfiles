@@ -11,6 +11,7 @@ cpFunc () {
 	cp -r -v ~/.config/deadbeef/config $dotfilesPath
 	cp -r -v ~/.xinitrc $dotfilesPath
 	cp -r -v ~/wall.png $dotfilesPath
+	cp -r -v /etc/profile $dotfilesPath
 }
 # Recursion lol
 
