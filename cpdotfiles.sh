@@ -7,9 +7,10 @@ cpFunc () {
 	cp -r -v ~/.bashrc $dotfilesPath
 	cp -r -v ~/programming/bashscripts/cpdotfiles.sh $dotfilesPath
 	cp -r -v ~/.Xresources $dotfilesPath
-	cp -r -v ~/.config/kak/kakrc $dotfilesPath
+	cp -r -v ~/.config/kak/ $dotfilesPath
 	cp -r -v ~/.config/deadbeef/config $dotfilesPath
 	cp -r -v ~/.xinitrc $dotfilesPath
+	cp -r -v ~/wall.png $dotfilesPath
 }
 # Recursion lol
 
