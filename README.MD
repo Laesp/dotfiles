@@ -1,5 +1,7 @@
 # Laesp's Orange Dotfiles for i3
 ![Screenshot](screenshot.png)
+
+Feel free to submit a MR/PR if you would like to implement any of the following, for whatever reason.
 ## TODO 
 - Clean up bashrc
 - Add comments to dotfiles
